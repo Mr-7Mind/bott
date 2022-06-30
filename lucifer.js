@@ -716,10 +716,10 @@ await fs.unlinkSync(FaTiH)
  case 'wasted': case 'passed': case 'jail': case 'comrade': case 'triggered': case 'simpcard': case 'horny': case 'lolice': {
  let respond = `Kirim/reply image dengan caption ${prefix + command}`
 if (!/image/.test(mime)) throw respond
- let dwnld = await quoted.download()
-let { floNime } = require('./lib/uploader')
-let fatGans = await floNime(dwnld)
-let canv = `https://api-kimimaru.herokuapp.com/api/canvas/${command}?apikey=k1mimaru&url=${fatGans.result.url}`
+ let dwnld = await kimimaru.downloadAndSaveMediaMessage(quoted)
+let { TelegraPh } = require('./lib/uploader')
+let fatGans = await TelegraPh(dwnld)
+let canv = `https://api-kimimaru.herokuapp.com/api/canvas/${command}?apikey=k1mimaru&url=${fatGans}`
 let FaTiH = await kimimaru.sendImageAsSticker(m.chat, canv, m, { packname: global.packname, author: global.auhor })
 await fs.unlinkSync(FaTiH)
  }
