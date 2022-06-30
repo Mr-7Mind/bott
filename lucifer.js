@@ -231,7 +231,7 @@ if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kimimaru.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await kimimaru.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Success`)).catch((err) => reply(`Error`))
 }
 break
 case 'add': {
@@ -240,7 +240,7 @@ if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kimimaru.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await kimimaru.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`Success`)).catch((err) => reply(`Error`))
 }
 break
 case 'promote': {
@@ -249,7 +249,7 @@ if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kimimaru.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await kimimaru.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(`Success`)).catch((err) => reply(`Error`))
 }
 break
 case 'demote': {
@@ -258,7 +258,7 @@ if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kimimaru.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await kimimaru.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(`Success`)).catch((err) => reply(`Error`))
 }
 break
 case 'block': {
