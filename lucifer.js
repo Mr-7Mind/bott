@@ -20,7 +20,6 @@ let footerwm = `Team EvilWhatsApp`
 kiminumer = ''
 awoktek = ''
 jumlahkirim = 1
-prefix = '#'
 replybiasater = "Hehhh.. Seperti biasa... yang"
 
 module.exports = kimimaru = async (kimimaru, m, chatUpdate, store) => {
@@ -28,8 +27,8 @@ try {
 angka = ['1','2','3','4','5','6','7','8','9']
 const randomnay1 = angka[Math.floor(Math.random() * (angka.length))]
 const randomnay2 = angka[Math.floor(Math.random() * (angka.length))]
-var body = (m.mtype === 'conversation' && m.message.conversation.startsWith(prefix)) ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') && m.message.extendedTextMessage.text.startsWith(prefix) ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
-
+var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''var budy = (typeof m.text == 'string' ? m.text : '')
+var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const isCmd = body.startsWith(prefix)
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
@@ -1975,18 +1974,6 @@ kimimaru.sendContact(m.chat, global.owner, m)
 }
 break
 case 'menu': {
-petik = '```'
-reply(`*MENU*
-• ${prefix}play
-• ${prefix}tiktok
-• ${prefix}ytmp3
-• ${prefix}ytmp4
-• ${prefix}stiker
-• ${prefix}stikerwm
-• ${prefix}take`)
-}
-break
-case 'allmenu': {
 smb = `│`
 noy = `⼽`
 petik = '```'
@@ -2156,7 +2143,6 @@ ${smb}${noy} ${prefix}bcgroup
 ${smb}${noy} ${prefix}bcall
 ${smb}${noy} ${prefix}setppbot
 ${smb}${noy} ${prefix}setexif
-${smb}${noy} ${prefix}setprefix
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 │ *𓆊 TEXTPRO MENU 𓆊*
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
@@ -2710,13 +2696,6 @@ N += `*RATE PAKBOYZ ${randomnay1}${randomnay2}%* :v`
 reply(N)
 }
 break 
-case 'setprefix': {
-if (!isCreator) return reply(mess.owner)
-if (!text) return reply(`Example: ${prefix}${command} ,`)
-prefix = text
-reply(`Sukses mengubah prefix menjadi ${text}`)
-}
-break
 case 'pakgirlcek': {
 N = `*NAME: ${pushname}*\n`,
 N += `*RATE PAKGIRL ${randomnay1}${randomnay2}%* :v`
