@@ -164,9 +164,9 @@ kimimaru.ev.emit('messages.upsert', msg)
 
 let mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
 
-if (command) setInterval(async () => {
-if (command) await kimimaru.sendPresenceUpdate('recording', m.chat)
-}, 5 * 1000)
+if (command) {
+ kimimaru.sendPresenceUpdate('recording', m.chat)
+}
 
 switch(command) {
 case 'gcinfo': {
