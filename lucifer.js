@@ -2258,6 +2258,23 @@ ${smb}${noy} ${prefix}robot
 ${smb}${noy} ${prefix}slow
 ${smb}${noy} ${prefix}tupai
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+│ *𓆊 FUN MENU  𓆊*
+│≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+${smb}${noy} ${prefix}halah
+${smb}${noy} ${prefix}hilih
+${smb}${noy} ${prefix}huluh
+${smb}${noy} ${prefix}heleh
+${smb}${noy} ${prefix}holoh
+${smb}${noy} ${prefix}jadian
+${smb}${noy} ${prefix}jodohku
+${smb}${noy} ${prefix}susunkata
+${smb}${noy} ${prefix}tebaklagu
+${smb}${noy} ${prefix}tebakkata
+${smb}${noy} ${prefix}tebaklirik
+${smb}${noy} ${prefix}tebakkalimat
+${smb}${noy} ${prefix}tebakgambar
+${smb}${noy} ${prefix}caklontong
+│≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 │ *𓆊 OWNER MENU 𓆊*
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 ${smb}${noy} ${prefix}react
