@@ -2787,8 +2787,9 @@ let buttons = [
 ]
 await kimimaru.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, kimimaru.user.name, m)
                 }
-                break
             }
+                break
+            
             case 'next': case 'lanjut': {
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
@@ -2832,7 +2833,9 @@ let buttons = [
 ]
 await kimimaru.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, kimimaru.user.name, m)
                 }
+            }
                 break
+            
 case 'aesthetik':
 case 'anime':
 case 'cyber':
