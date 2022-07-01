@@ -2108,7 +2108,11 @@ anu = `╭══〘 歹𝐵𝑜𝑡 𝑀𝑟-𝟩𝑀𝑖𝑛𝑑 〙═╮
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 ╰══╡歹𝐵𝑜𝑡 𝑀𝑟-𝟩𝑀𝑖𝑛𝑑╞══╯
 ╭─────────────╮
-│ *𓆊 DOWNLOADER MENU 𓆊*
+│ *𓆊  REPORT ERROR 𓆊*
+│≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+${smb}${noy} ${prefix}report
+│≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+│ *𓆊  DOWNLOADER MENU 𓆊*
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 ${smb}${noy} ${prefix}ytmp3
 ${smb}${noy} ${prefix}ytmp4
