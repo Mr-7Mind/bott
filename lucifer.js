@@ -2991,6 +2991,12 @@ headerType: 4,
 kimimaru.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
+          case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
+            if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
+            ter = command[1].toLowerCase()
+            tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
+            m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
+            break
 case 'anjing': 
 case 'blackpink': 
 case 'boneka': 
