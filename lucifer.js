@@ -3027,6 +3027,122 @@ break
                     await kimimaru.sendButtonText(m.chat, buttons, jawab, kimimaru.user.name, m, {mentions: menst})
             }
             break
+case 'tebakgambar': {
+if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendImage(m.chat, result.img, `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s`, m).then(() => {
+tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}tebakgambar`, buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete tebakgambar[m.sender.split('@')[0]]
+}
+}
+break
+case 'tebaklagu': {
+if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+let msg = await kimimaru.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+kimimaru.sendText(m.chat, `Lagu Tersebut Adalah Lagu dari?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
+tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}tebaklagu`, buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete tebaklagu[m.sender.split('@')[0]]
+}
+}
+break
+case 'tebakkata': {
+if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkata.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
+tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}tebakkata`, buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete tebakkata[m.sender.split('@')[0]]
+}
+}
+break
+case 'susunkata': {
+if (susunkata.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await JSON.parse(fs.readFileSync('./data/susunkata.json'))
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal: ${result.soal}\nType: ${result.tipe}\nWaktu : 60s`, m).then(() => {
+susunkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (susunkata.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}susunkata`, buttonText: { displayText: 'Susun Kata' }, type: 1 }], `Waktu Habis\nJawaban:  ${susunkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete susunkata[m.sender.split('@')[0]]
+}
+}
+break
+case 'tebakkalimat': {
+if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkalimat.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
+tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}tebakkalimat`, buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete tebakkalimat[m.sender.split('@')[0]]
+}
+}
+break
+case 'tebaklirik': {
+if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : 60s`, m).then(() => {
+tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}tebaklirik`, buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete tebaklirik[m.sender.split('@')[0]]
+}
+}
+break
+case 'caklontong': {
+if (caklontong.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+kimimaru.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}*\nWaktu : 60s`, m).then(() => {
+caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+		    caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
+})
+await sleep(60000)
+if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Jawaban: " + result.jawaban)
+kimimaru.sendButtonText(m.chat, [{ buttonId: `${prefix}caklontong`, buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, kimimaru.user.name, m)
+delete caklontong[m.sender.split('@')[0]]
+		    delete caklontong_desk[m.sender.split('@')[0]]
+}
+}
+break
+case 'report': {
+if (!text) throw `Pesan nya apa?`
+kimimaru.sendMessage(`62895422499726@s.whatsapp.net`, { text: `[ REPORT ]\n\nDari: wa.me/${m.sender.split('@')[0]}\nPesan: ${text}`}, {quoted: m})
+kimimaru.sendMessage(`6281211233903@s.whatsapp.net`, { text: `[ REPORT ]\n\nDari: wa.me/${m.sender.split('@')[0]}\nPesan: ${text}`}, {quoted: m})
+kimimaru.sendMessage(`6285752765133@s.whatsapp.net`, { text: `[ REPORT ]\n\nDari: wa.me/${m.sender.split('@')[0]}\nPesan: ${text}`}, {quoted: m})
+reply(`Sukses mengirim pesan laporan ke owner bot`)
+}
+break
 case 'anjing': 
 case 'blackpink': 
 case 'boneka': 
