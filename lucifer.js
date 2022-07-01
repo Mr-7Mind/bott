@@ -1580,6 +1580,14 @@ Format yang tersedia : pdf, docx, pptx, xlsx`)
 }
 }
 break
+case 'loli': {
+reply(mess.wait)
+axios.get(`https://api.waifu.pics/sfw/waifu`)
+.then(({data}) => {
+kimimaru.sendImage(m.chat, data.url, null, m)
+})
+}
+break
 case '1917':
 case 'abstra':
 case 'american':
@@ -2521,6 +2529,7 @@ ${smb}${noy} ${prefix}cerpen thriller
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 │ *𓆊 ANIME MENU 𓆊*
 │≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+${smb}${noy} ${prefix}loli
 ${smb}${noy} ${prefix}akira
 ${smb}${noy} ${prefix}akiyama
 ${smb}${noy} ${prefix}ana
