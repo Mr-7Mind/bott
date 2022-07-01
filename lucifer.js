@@ -2997,6 +2997,36 @@ break
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
+            case 'jodohku': {
+            if (!m.isGroup) throw mess.group
+            let member = participants.map(u => u.id)
+            let me = m.sender
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `👫Jodoh mu adalah
+
+@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
+            let ments = [me, jodoh]
+            let buttons = [
+                        { buttonId: 'jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
+                    ]
+                    await kimimaru.sendButtonText(m.chat, buttons, jawab, kimimaru.user.name, m, {mentions: ments})
+            }
+            break
+            case 'jadian': {
+            if (!m.isGroup) throw mess.group
+            let member = participants.map(u => u.id)
+            let orang = member[Math.floor(Math.random() * member.length)]
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `Ciee yang Jadian💖 Jangan lupa pajak jadiannya🐤
+
+@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
+            let menst = [orang, jodoh]
+            let buttons = [
+                        { buttonId: 'jadian', buttonText: { displayText: 'Jodohku' }, type: 1 }
+                    ]
+                    await kimimaru.sendButtonText(m.chat, buttons, jawab, kimimaru.user.name, m, {mentions: menst})
+            }
+            break
 case 'anjing': 
 case 'blackpink': 
 case 'boneka': 
